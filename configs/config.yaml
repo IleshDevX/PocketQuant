@@ -1,0 +1,165 @@
+# PocketQuant Configuration
+
+# =============================================================================
+# PROJECT SETTINGS
+# =============================================================================
+project:
+  name: "PocketQuant"
+  version: "1.0.0"
+  description: "Merchant Liquidity Shortage Prediction System"
+
+# =============================================================================
+# DATA SETTINGS
+# =============================================================================
+data:
+  raw_path: "data/merchant_liquidity.csv"
+  processed_path: "data/processed/"
+  features_path: "data/features/"
+  
+  target_column: "liquidity_shortage_next_48h"
+  
+  # Columns to drop during modeling
+  drop_columns:
+    - "merchant_id"
+    - "date"
+  
+  # Categorical columns for encoding
+  categorical_columns:
+    - "merchant_category"
+    - "merchant_sub_category"
+    - "merchant_city"
+    - "merchant_state"
+    - "kyc_status"
+    - "risk_segment_internal"
+    - "reconciliation_flag"
+    - "expense_spike_flag"
+    - "historical_default_flag"
+    - "previous_shortage_flag"
+    - "is_weekend"
+    - "is_festival"
+  
+  # Numerical columns for scaling
+  numerical_columns:
+    - "business_age_days"
+    - "daily_inflow"
+    - "transaction_count"
+    - "avg_ticket_size"
+    - "max_ticket_size"
+    - "min_ticket_size"
+    - "failed_transaction_count"
+    - "refund_amount"
+    - "refund_ratio"
+    - "chargeback_count"
+    - "daily_outflow_estimated"
+    - "supplier_payment_amount"
+    - "emi_obligation_daily"
+    - "salary_payout_daily"
+    - "rent_daily_estimate"
+    - "utility_expense_daily"
+    - "total_fixed_cost_daily"
+    - "total_variable_cost_daily"
+    - "settlement_delay_days"
+    - "pending_settlement_amount"
+    - "settlement_success_rate"
+    - "wallet_balance"
+    - "bank_balance_visible"
+    - "opening_balance"
+    - "closing_balance"
+    - "net_cash_flow"
+    - "projected_48h_balance"
+    - "liquidity_buffer_days"
+    - "rolling_3d_inflow_avg"
+    - "rolling_7d_inflow_avg"
+    - "rolling_7d_volatility"
+    - "inflow_growth_rate"
+    - "inflow_outflow_ratio"
+    - "transaction_growth_rate"
+    - "volatility_score_normalized"
+    - "revenue_concentration_index"
+    - "inflow_drop_percentage"
+    - "stress_score_composite"
+    - "credit_limit_assigned"
+    - "credit_utilization_ratio"
+    - "outstanding_loan_amount"
+    - "days_since_last_shortage"
+    - "weekday_number"
+    - "month"
+
+# =============================================================================
+# MODEL SETTINGS
+# =============================================================================
+model:
+  # Train/test split
+  test_size: 0.2
+  random_state: 42
+  
+  # Cross-validation
+  cv_folds: 5
+  stratified: true
+  
+  # Class balancing
+  balance_strategy: "smote"  # Options: smote, class_weight, none
+  
+  # Default model
+  default_algorithm: "xgboost"
+  
+  # Algorithms to compare
+  algorithms:
+    - "logistic_regression"
+    - "random_forest"
+    - "xgboost"
+    - "lightgbm"
+
+# =============================================================================
+# EVALUATION SETTINGS
+# =============================================================================
+evaluation:
+  # Primary metrics
+  metrics:
+    - "precision"
+    - "recall"
+    - "f1"
+    - "roc_auc"
+  
+  # Performance targets
+  targets:
+    precision: 0.75
+    recall: 0.80
+    f1: 0.77
+    roc_auc: 0.85
+  
+  # Default classification threshold
+  default_threshold: 0.5
+  
+  # Operational threshold (favor recall)
+  operational_threshold: 0.4
+
+# =============================================================================
+# RISK CLASSIFICATION THRESHOLDS
+# =============================================================================
+risk_thresholds:
+  low:
+    min: 0.0
+    max: 0.3
+    action: "Standard monitoring"
+  medium:
+    min: 0.3
+    max: 0.6
+    action: "Enhanced monitoring, proactive outreach"
+  high:
+    min: 0.6
+    max: 0.8
+    action: "Immediate intervention, credit review"
+  critical:
+    min: 0.8
+    max: 1.0
+    action: "Urgent action, settlement hold review"
+
+# =============================================================================
+# OUTPUT SETTINGS
+# =============================================================================
+output:
+  models_path: "models/trained/"
+  artifacts_path: "models/artifacts/"
+  reports_path: "reports/"
+  figures_path: "reports/figures/"
