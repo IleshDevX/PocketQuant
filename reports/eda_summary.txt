@@ -1,0 +1,20 @@
+
+PocketQuant EDA Summary Report
+Generated: 2026-02-27 15:34
+
+Target Variable: liquidity_shortage_next_48h
+Shortage Rate: 1.29%
+Imbalance Ratio: 76.5:1
+
+Top Correlated Features with Target:
+liquidity_buffer_days    -0.1782
+inflow_outflow_ratio     -0.1528
+net_cash_flow            -0.1505
+stress_score_composite    0.0977
+daily_inflow             -0.0718
+
+Key Findings:
+- Severe class imbalance (76:1) requires special handling
+- Volatility metrics are strong predictors
+- Credit utilization >70% is a risk threshold
+- Temporal patterns exist in shortage events
