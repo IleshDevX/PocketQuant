@@ -1,0 +1,69 @@
+
+================================================================================
+POCKETQUANT MODEL EXPLAINABILITY REPORT
+================================================================================
+Generated: 2026-02-27 18:51:05
+
+1. MODEL OVERVIEW
+-----------------
+Model Type: XGBoost Classifier (Tuned)
+Total Features: 55
+Training Samples: 40,000
+Test Samples: 10,000
+
+2. FEATURE IMPORTANCE SUMMARY
+-----------------------------
+Top 5 Predictors:
+                  feature  importance            category
+   liquidity_buffer_ratio      0.6853    Liquidity Health
+    liquidity_buffer_days      0.0796    Liquidity Health
+working_capital_indicator      0.0298               Other
+     inflow_outflow_ratio      0.0287 Transaction Metrics
+   merchant_category_Food      0.0267    Merchant Profile
+
+Feature Categories:
+category
+Liquidity Health      0.7860
+Merchant Profile      0.0694
+Transaction Metrics   0.0560
+Other                 0.0425
+Volatility/Trend      0.0238
+Risk Indicators       0.0132
+Credit Risk           0.0090
+
+3. SHAP ANALYSIS
+----------------
+Top 5 SHAP Importance:
+                  feature  shap_importance
+   liquidity_buffer_ratio           8.4543
+    liquidity_buffer_days           4.1948
+     inflow_outflow_ratio           1.7028
+working_capital_indicator           1.1678
+  cashflow_coverage_ratio           0.6569
+
+Key Findings:
+- Liquidity buffer ratio is the strongest predictor (aligns with financial theory)
+- Model behavior is explainable through SHAP values
+- Feature interactions captured effectively
+
+4. BIAS VALIDATION
+------------------
+Merchant Categories Analyzed: 5
+Recall Variance: 0.0189
+Precision Variance: 0.0506
+Bias Status: ✅ No significant bias detected
+
+5. THRESHOLD RECOMMENDATIONS
+----------------------------
+Optimal Threshold (F1): 0.60
+Recommended Operational Threshold: 0.40 (favors recall for risk management)
+
+6. FILES GENERATED
+------------------
+- Feature Importance: models/artifacts/feature_importance_detailed.csv
+- SHAP Importance: models/artifacts/shap_feature_importance.csv
+- Threshold Analysis: models/artifacts/threshold_analysis.csv
+- Bias Analysis: models/artifacts/bias_analysis.csv
+- Visualizations: reports/figures/
+
+================================================================================

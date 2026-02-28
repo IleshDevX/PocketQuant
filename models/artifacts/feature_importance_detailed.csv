@@ -1,0 +1,56 @@
+feature,importance,category
+liquidity_buffer_ratio,0.6852823,Liquidity Health
+liquidity_buffer_days,0.07958779,Liquidity Health
+working_capital_indicator,0.029830161,Other
+inflow_outflow_ratio,0.028744403,Transaction Metrics
+merchant_category_Food,0.026710082,Merchant Profile
+revenue_decline_pct,0.00977868,Transaction Metrics
+rolling_7d_inflow_cv,0.008575839,Volatility/Trend
+stress_buffer_interaction,0.008572645,Liquidity Health
+net_cash_flow,0.007544092,Liquidity Health
+transaction_count,0.0070926873,Transaction Metrics
+merchant_state_Gujarat,0.005357683,Merchant Profile
+merchant_city_Delhi,0.004792716,Merchant Profile
+daily_outflow_estimated,0.004573119,Transaction Metrics
+revdrop_credit_interaction,0.004522477,Credit Risk
+daily_inflow,0.0043948465,Transaction Metrics
+stress_intensity_score,0.0040470324,Risk Indicators
+is_weekend,0.0036133078,Other
+merchant_state_encoded,0.0035848583,Merchant Profile
+cashflow_coverage_ratio,0.0034604142,Liquidity Health
+risk_segment_internal_encoded,0.0034299763,Risk Indicators
+gap_volatility_interaction,0.0033596093,Volatility/Trend
+merchant_sub_category_Restaurant,0.0032918216,Merchant Profile
+merchant_sub_category_Medical,0.002979159,Merchant Profile
+merchant_sub_category_encoded,0.0029262954,Merchant Profile
+rolling_3d_inflow,0.0026684985,Volatility/Trend
+rolling_7d_inflow,0.002550972,Volatility/Trend
+merchant_sub_category_Supermarket,0.0025147751,Merchant Profile
+kyc_status_Verified,0.0025037893,Other
+month,0.002503734,Other
+merchant_city_Surat,0.002503069,Merchant Profile
+risk_segment_internal_Medium,0.0024206939,Risk Indicators
+consecutive_drop_days,0.0023382457,Other
+stress_score_composite,0.0023370588,Risk Indicators
+merchant_category_encoded,0.0022851976,Merchant Profile
+rolling_14d_inflow,0.002272314,Volatility/Trend
+merchant_category_Pharmacy,0.0020977368,Merchant Profile
+merchant_state_Maharashtra,0.0020686695,Merchant Profile
+merchant_category_Retail,0.0018642782,Merchant Profile
+credit_vol_interaction,0.0017272923,Credit Risk
+kyc_status_encoded,0.0016676494,Other
+merchant_sub_category_MobileShop,0.0016275938,Merchant Profile
+rolling_7d_volatility,0.0015552847,Volatility/Trend
+rolling_7d_net_cashflow,0.00155241,Liquidity Health
+rolling_7d_outflow,0.0015375572,Volatility/Trend
+debt_service_ratio,0.0014683594,Credit Risk
+merchant_city_encoded,0.0014010601,Merchant Profile
+merchant_category_Grocery,0.0013964879,Merchant Profile
+merchant_city_Pune,0.0013168583,Merchant Profile
+volatility_score_normalized,0.0013028093,Volatility/Trend
+credit_utilization_ratio,0.0012999179,Credit Risk
+risk_segment_internal_Low,0.0010151725,Risk Indicators
+revenue_drop_7d,0.0008655923,Transaction Metrics
+merchant_city_Mumbai,0.00072733813,Merchant Profile
+revenue_drop_significant,0.0005576871,Transaction Metrics
+revenue_drop_severe,0.0,Transaction Metrics
